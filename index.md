@@ -26,3 +26,10 @@ On our domain controller machine, I needed to setup Active Directory. I created 
 ![AD](AD.png)
 
 Now that I have created a new user on the Domian Contrller, I want to connect the user machine to the domain. To do this I went into the window settings and in the "About" settings clicked "Rename this PC (advanced)" and specified the domain as "MyDomain" and logged in with administrator password to proceed and ran into errors. This is because I left the DNS field blank earlier when I was setting up the VPC address. To fix the domain linking issue I set the DNS address to the Active Directory machine VPC address, after trying again I was able to link the user to the Domain. Now I should be able to login with my new user John Doe within my domain by logging in with "MyDomain\JDoe". Before I can Remote login with the John Doe account I have to allow the user to have remote connections and allow this by logging in with admin credentials. 
+
+# Setting Splunk and Setting up Windows Telemetry
+
+To setup the Ubuntu server to run splunk we want to go and download the trial version of Splunk Enterprise and download the debian version, to make it easier I just used the Wget command to install it on the command line of my Ubuntu server. After downloading and running Splunk on my server, we need to make some adjustments to the firewall rules. Splunk primarily uses port 8000 to listen so if I want to access splunk web I needed to add a Firewall rule allowing my IP address to allow listening on port 8000 on the Ubuntu server. After that is setup after creating a login for Splunk, below we can see that Splunk is succesfully working on the Ubuntu server by typing in the public IP of the server and logging in with my Splunk credentials. Below is an image of what it should look like after correctly setting it up 
+
+![Splunk](Splunk.png)
+
