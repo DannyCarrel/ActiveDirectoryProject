@@ -37,7 +37,7 @@ Now that I have Splunk setup and listening on port 8000 from the Ubuntu server, 
 
 ![conf](splunkinputconf.png)
 
-Since we already added the host rule on the Ubuntu server to allow port (9997) we should be able to go back to our Splunk Enterprise page and be able to see the telemetry from the machine, note that I just had to repeat the steps for both devices as the process is the same. Below is an image of the telemetry I began recieving from the machines. 
+Since we already added the host rule on the Ubuntu server to allow port (9997) we should be able to go back to our Splunk Enterprise page and be able to see the telemetry from the machine, note that I just had to repeat the steps for both devices as the process is the same. Below is an image of the telemetry I began recieving from the machines. We can see that by filtering for telemetry with the "index = MyDomain" which is the domain we setup in this project. 
 
 ![telemetry](telemetry.png)
 
