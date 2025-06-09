@@ -44,3 +44,8 @@ Since we already added the host rule on the Ubuntu server to allow port (9997) w
 Just as another way to confirm that we are recieving telemetry from both of our machines the image below shows the two hosts that we are collecting from in Splunk
 
 ![host](Host.png)
+
+
+```
+index=mydomain-ad EventCode=4624 (Logon_Type=7 OR Logon_Type=10) Source_Network_Address=* Source_Network_Address!="-" Source_Network_Address!=71.* | stats count by _time,ComputerName,Source_Network_Address,user,Logon_Type
+```
