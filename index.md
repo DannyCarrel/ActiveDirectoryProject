@@ -41,4 +41,6 @@ Since we already added the host rule on the Ubuntu server to allow port (9997) w
 
 ![telemetry](telemetry.png)
 
+Just as another way to confirm that we are recieving telemetry from both of our machines the image below shows the two hosts that we are collecting from in Splunk
 
+![host](Host.png)
