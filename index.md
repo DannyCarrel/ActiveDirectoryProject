@@ -11,5 +11,5 @@ In this project I will be setting up three virtual machines. The first machine w
 
 To start, im using Vultr to create my virtual machines in their cloud platform. After creating the machines I need to setup the machines so that they can communicate with each other and that I am the only one that can communicate with them for the time being. To do this I setup a firewall group to add all of the machines to and created policys to allow me to connect to them from my PC. Below is an image of the basic policy rules I setup to allow me to SSH into the Splunk Ubuntu server and be able to Remote Desktop into the domain controller and user PC. 
 
-![Firewall](Firewall Rules.png)
+![Firewall](FirewallRules.png)
 
