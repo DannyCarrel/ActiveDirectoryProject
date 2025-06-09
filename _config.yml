@@ -1,5 +1,5 @@
-title: Hacker theme
-description: Hacker is a theme for GitHub Pages.
+title: Active Directory Seucirty Project
+description: Setting up AD and using log event tools to monitor login attempts and shut down user accounts through domain controllers
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-hacker
