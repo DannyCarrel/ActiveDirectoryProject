@@ -33,3 +33,12 @@ To setup the Ubuntu server to run splunk we want to go and download the trial ve
 
 ![Splunk](Splunk.png)
 
+Now that I have Splunk setup and listening on port 8000 from the Ubuntu server, I need to set up telemetry on both the user and domain controller machines. To do this we need to download the Universal Splunk Forwarder on both of the devices, I will walk through how to do it but the steps are the same for both machines. After running the forwarder download on the machine and go through the setup. The important step here is to make sure that you set the recieving indexer the VPC or private IP address of the Ubuntu server and set the port to 9997. This also means that I had to go back to the Ubuntu server and allow the "ufw" to allow port (9997). After this you need to go into the file path of SplunkForwarder and in the local folder add a "input.conf" and add the following to the file. I used a local system account and I had to reset the service of the Splunk Forwarder for anything to take effect.
+
+![conf](splunkinputconf.png)
+
+Since we already added the host rule on the Ubuntu server to allow port (9997) we should be able to go back to our Splunk Enterprise page and be able to see the telemetry from the machine, note that I just had to repeat the steps for both devices as the process is the same. Below is an image of the telemetry I began recieving from the machines. 
+
+![telemetry](telemetry.png)
+
+
