@@ -9,7 +9,10 @@ In this project I will be setting up three virtual machines. The first machine w
 
 # Setting Up Machines and Firewall Rules
 
-To start, im using Vultr to create my virtual machines in their cloud platform. After creating the machines I need to setup the machines so that they can communicate with each other and that I am the only one that can communicate with them for the time being. To do this I setup a firewall group to add all of the machines to and created policys to allow me to connect to them from my PC. Below is an image of the basic policy rules I setup to allow me to SSH into the Splunk Ubuntu server and be able to Remote Desktop into the domain controller and user PC. 
+To start, im using Vultr to create my virtual machines in their cloud platform. After creating the machines I need to setup the machines so that they can communicate with each other and that I am the only one that can communicate with them for the time being. To do this I setup a firewall group to add all of the machines to and created policys to allow me to connect to them from my PC. Below is an image of the basic policy rules I setup to allow me to SSH into the Splunk Ubuntu server and be able to Remote Desktop into the domain controller and user PC. Next im going to setup Virtual Private Cloud(VPC) on the machines so that I can securly isolate the machines while setting them up. Vultr makes this easy and creates a VPC for you for each machine with a click of a button.
 
 ![Firewall](FirewallRules.png)
 
+Now I want to make sure that the machines can all communicate with one another since the domain controller and the user device will be sending telemtry to the server we are running Splunk on to collect and log the data. I ran into issues when trying to ping the devices to one another. To troubleshoot this I investigated the network interfaces within the machines. The windows machines have the proper public IP for the first network interface, but the second network interface is not the address of the VPC address. To fix this I Remote Desktop into the windows machines and changed the IP address and Subnet Mask to match that of the VPC. Below is an image of me trobleshooting the ping connectivity issues. 
+
+![VPC](VPCIP.png)
