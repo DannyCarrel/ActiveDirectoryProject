@@ -16,3 +16,11 @@ To start, im using Vultr to create my virtual machines in their cloud platform. 
 Now I want to make sure that the machines can all communicate with one another since the domain controller and the user device will be sending telemtry to the server we are running Splunk on to collect and log the data. I ran into issues when trying to ping the devices to one another. To troubleshoot this I investigated the network interfaces within the machines. The windows machines have the proper public IP for the first network interface, but the second network interface is not the address of the VPC address. To fix this I Remote Desktop into the windows machines and changed the IP address and Subnet Mask to match that of the VPC. Below is an image of me trobleshooting the ping connectivity issues. 
 
 ![VPC](VPCIP.png)
+
+Now that my machines have the proper public and VPC IP address on their network interfaces I tried to ping the machines from one another and was finally able to reach a connetion. 
+
+# Installing and Configuring Active Directory and Promote Domain Controller
+
+On our domain controller machine, I needed to setup Active Directory. I created a new "forest" and created a domain name called "MyDomain" and created a secure password for the controller. Next I want to create a new user account for my user machine to login to with my newly created domain. Below is an image of a user I created name "John Doe" and showing the user inside the forest I created called "MyDomain". 
+
+![AD](AD.png)
