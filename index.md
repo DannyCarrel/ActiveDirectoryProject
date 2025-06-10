@@ -45,6 +45,8 @@ Just as another way to confirm that we are recieving telemetry from both of our 
 
 ![host](Host.png)
 
+Something interesting we can look at is if we loosen the firewall rules on our machines, for example allowing RDP (port 3389) to allow connections from anywhere as long as they have the proper credentials they can remote desktop into our user machine. In splunk we can make some query in Splunk to collect some logs of failed login attempts. 
+
 
 ```
 index=mydomain-ad EventCode=4624 (Logon_Type=7 OR Logon_Type=10) Source_Network_Address=* Source_Network_Address!="-" Source_Network_Address!=71.* | stats count by _time,ComputerName,Source_Network_Address,user,Logon_Type
