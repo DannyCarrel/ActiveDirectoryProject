@@ -55,5 +55,9 @@ index=mydomain-ad EventCode=4624 (Logon_Type=7 OR Logon_Type=10) Source_Network_
 ```
 # Integrating Shuffle to Automate Task
 
-With all the alerts and Splunk setup, I can now go over to shuffle and create my workflow to automate the task of disabling a user if there was a successful unauthorized login. I want my work flow to use a webhook to grab the triggered alert from Splunk and then send the information over to Slack, the message will include the user, time, source IP and logon type of the triggered event of a login. Next I want to recieve a email asking if I want to disable the user, if I select yes, Shuffle will automate my Active Directory to disable the user that triggered the alert. 
+With all the alerts and Splunk setup, I can now go over to shuffle and create my workflow to automate the task of disabling a user if there was a successful unauthorized login. I want my work flow to use a webhook to grab the triggered alert from Splunk and then send the information over to Slack, the message will include the user, time, source IP and logon type of the triggered event of a login. Next I want to recieve a email asking if I want to disable the user, if I select yes, Shuffle will automate my Active Directory to disable the user that triggered the alert. Below is the workflow I created in Shuffle. 
+
+![Workflow](Workflow.png)
+
+
 
