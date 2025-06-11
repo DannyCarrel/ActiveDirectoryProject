@@ -56,7 +56,7 @@ With all the alerts and Splunk setup, I can now go over to shuffle and create my
 
 ![Workflow](Workflow.png)
 
-Now I can test my workflow to make sure that the webhook is pulling the information from my splunk alerts and is sending me a slack message and email for me to be able to disable the user automatically with the click of one link automatically in Active Directory.
+Now I can test my workflow to make sure that the webhook is pulling the information from my splunk alerts and is sending me a slack message and email for me to be able to disable the user automatically with the click of one link automatically in Active Directory. The time is going to be in epoch time. 
 
 ![report](report.png)
 ![slack](slack.png)
