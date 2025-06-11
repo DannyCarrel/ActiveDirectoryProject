@@ -66,5 +66,9 @@ Now I can test my workflow to make sure that the webhook is pulling the informat
 
 All thats left is to check my Domain Controller and ensure that the user JDoe has been disabled within the active directory
 
+![disabled](disabled.png)
+
+Great! that means Shuffle automated all my task. Shuffle makes this process really easy becuase all you have to do is authenticate all of the blocks and enter login and connection information and will automate the rest of the task for you all super easily. Within this project I learned a lot of new skills like getting hands on experience with splunk and learning how to install it on a server machine and learn how to setup telemetry to collect log data from multiple machines. I also learned how to setup Active Directory and create my own domains and users and how to setup those users to be able to login to the newly created domain. Although the task were simple I got an idea of setting up firewall rules and learning what traffic to control and what ports to open to allow data and other types of connections be allowed of the network. Lastly I got experience using the SOAR tool Shuffle and learned how to automate task to make things easier for SOC analyst. 
+
 
 
