@@ -49,5 +49,5 @@ Something interesting we can look at is if we loosen the firewall rules on our m
 
 
 ```
-index=mydomain-ad EventCode=4624 (Logon_Type=7 OR Logon_Type=10) Source_Network_Address=* Source_Network_Address!="-" Source_Network_Address!=71.* | stats count by _time,ComputerName,Source_Network_Address,user,Logon_Type
+index=mydomain-ad EventCode=4624 (Logon_Type=7 OR Logon_Type=10) Source_Network_Address!="-" Source_Network_Address!=71.* Source_Network_Address!="-" Source_Network_Address!="-"
 ```
