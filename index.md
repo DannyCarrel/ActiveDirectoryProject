@@ -49,6 +49,11 @@ Something interesting we can look at is if we loosen the firewall rules on our m
 
 ![failed](failedlogin.png)
 
+Since I really only wanna focus on successful logins within this project becuase the point of the project is to disable users automatically that have had an authorized successful login which is an EventCode of (4624). Below is the Splunk filter I will use with the added information I want to create an alert. I want to collect the time, device name, network source and the logon type. This is all the information that is going to be sent over to slack autonomously when splunk has a triggered alert based of the one I created below. So when a successful unauthorized login is acheived by an outside IP source that doesnt start with 71.* since I know thats a secure connection, splunk will trigger an alert.  
 ```
-index=mydomain-ad EventCode=4624 (Logon_Type=7 OR Logon_Type=10) Source_Network_Address!="-" Source_Network_Address!=71.* Source_Network_Address!="-" Source_Network_Address!="-"
+index=mydomain-ad EventCode=4624 (Logon_Type=7 OR Logon_Type=10) Source_Network_Address!="-" Source_Network_Address!=71.* Source_Network_Address!="-" Source_Network_Address!="-" | stats count by _time,ComputerName,Source_Network_Address,user,Logon_Type 
 ```
+# Integrating Shuffle to Automate Task
+
+With all the alerts and Splunk setup, I can now go over to shuffle and create my workflow to automate the task of disabling a user if there was a successful unauthorized login. I want my work flow to use a webhook to grab the triggered alert from Splunk and then send the information over to Slack, the message will include the user, time, source IP and logon type of the triggered event of a login. Next I want to recieve a email asking if I want to disable the user, if I select yes, Shuffle will automate my Active Directory to disable the user that triggered the alert. 
+
